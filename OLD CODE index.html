@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Court Case Data Processing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .upload-box {
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            width: 100%;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .progress-container {
+            margin-top: 20px;
+        }
+        .progress-bar {
+            width: 0;
+            height: 10px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        .download-container {
+            margin-top: 20px;
+        }
+        .download-link {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Court Case Data Processing</h1>
+        <div class="upload-box">
+            <h3>Upload Excel Files</h3>
+            <input type="file" id="fileInput" multiple accept=".xls,.xlsx">
+            <button id="processButton">Process Files</button>
+        </div>
+        <div id="progressContainer" class="progress-container" style="display: none;">
+            <div id="progressBar" class="progress-bar"></div>
+            <p id="progressText">Processing...</p>
+        </div>
+        <div id="downloadContainer" class="download-container" style="display: none;">
+            <a href="#" id="downloadLink" class="download-link">Download Processed Data</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="court-case-processor.js"></script>
+</body>
+</html>
